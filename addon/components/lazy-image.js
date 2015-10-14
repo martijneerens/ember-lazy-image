@@ -14,7 +14,7 @@ export default Component.extend(InViewportMixin, ImageLoadMixin, LazyImageMixin,
 
   _classJoin: on('init', function() {
     const classArray = get(this, 'class');
-    set(this, 'class', classArray.join(' '));
+    set(this, 'class', Array.prototype.join.call(classArray,' '));
   }),
 
   _setupAttributes() {
